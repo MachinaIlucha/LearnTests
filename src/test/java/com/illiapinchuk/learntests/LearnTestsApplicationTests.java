@@ -34,8 +34,8 @@ class LearnTestsApplicationTests {
 
         Optional<Employee> returnedWidget = employeeService.findById(1L);
 
-        Assertions.assertTrue(returnedWidget.isPresent(), "Widget was not found");
-        Assertions.assertSame(returnedWidget.get(), employee, "The widget returned was not the same as the mock");
+        Assertions.assertTrue(returnedWidget.isPresent(), "Employee was not found");
+        Assertions.assertSame(returnedWidget.get(), employee, "The Employee returned was not the same as the mock");
     }
 
     @Test
@@ -45,7 +45,7 @@ class LearnTestsApplicationTests {
 
         Optional<Employee> returnedWidget = employeeService.findById(1L);
 
-        Assertions.assertFalse(returnedWidget.isPresent(), "Widget should not be found");
+        Assertions.assertFalse(returnedWidget.isPresent(), "Employee should not be found");
     }
 
     @Test
@@ -68,7 +68,7 @@ class LearnTestsApplicationTests {
 
         Employee returnedEmployee = employeeService.save(employee);
 
-        Assertions.assertNotNull(returnedEmployee, "The saved widget should not be null");
+        Assertions.assertNotNull(returnedEmployee, "The saved Employee should not be null");
         Assertions.assertEquals(1L, returnedEmployee.getId(), "The id should be 1L");
     }
 }
